@@ -6,14 +6,16 @@
     <script type="text/javascript">
     $(document).ready(function() {
         $("#insert").click(function() {
-            var title = $("#title").val();
-            var duration = $("#duration").val();
-            var price = $("#price").val();
-            var dataString = "title=" + title + "&duration=" + duration + "&price=" + price + "&insert=";
-            if ($.trim(title).length > 0 & $.trim(duration).length > 0 & $.trim(price).length > 0) {
+            var id_pel= $("#id_pel").val();
+            var nama_pel = $("#nama_pel").val();
+            var alamat_pel = $("#alamat_pel").val();
+            var no_hp = $("#no_hp").val();
+            
+            var dataString = "id_pel=" + id_pel + "&nama_pel=" + nama_pel + "&alamat_pel=" + alamat_pel + "&no_hp=" + no_hp + "&insert=";
+            if ($.trim(id_pel).length > 0 & $.trim(nama_pel).length > 0 & $.trim(alamat_pel).length > 0 & $.trim(no_hp).length > 0 ) {
                 $.ajax({
                     type: "POST",
-                    url: "https://kungfumas.000webhostapp.com/insert.php",
+                    url: "https://mayaaul.000webhostapp.com/cordova/cordova/www/insert.php",
                     data: dataString,
                     crossDomain: true,
                     cache: false,
@@ -44,19 +46,24 @@
     <br/>
     <br/>
     <div class="list">
-        <input type="hidden" id="id" value="" />
+        
         <div class="item">
-            <label>Title</label>
-            <input type="text" id="title" value="" />
+            <label>ID</label>
+            <input type="text" id="id_pel" value="" />
         </div>
         <div class="item">
-            <label>Duration</label>
-            <input type="text" id="duration" value="" />
+            <label>Nama</label>
+            <input type="text" id="nama_pel" value="" />
         </div>
         <div class="item">
-            <label>Price</label>
-            <input type="text" id="price" value="" />
+            <label>Alamat</label>
+            <input type="text" id="alamat_pel" value="" />
         </div>
+        <div class="item">
+            <label>No hp</label>
+            <input type="text" id="no_hp" value="" />
+        </div>
+        
         <div class="item">
             <input type="button" id="insert" class="button button-block" value="Insert" />
         </div>
