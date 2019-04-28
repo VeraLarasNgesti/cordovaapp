@@ -5,15 +5,16 @@
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript">
     $(document).ready(function() {
-        var url = "https://kungfumas.000webhostapp.com/json.php";
+        var url = "https://mayaaul.000webhostapp.com/cordova/cordova/www/json.php";
         $.getJSON(url, function(result) {
             console.log(result);
             $.each(result, function(i, field) {
-                var id = field.id;
-                var title = field.title;
-                var duration = field.duration;
-                var price = field.price;
-                $("#listview").append("<a class='item' href='form.html?id=" + id + "&title=" + title + "&duration=" + duration + "&price=" + price + "'><span class='item-note'>$" + price + "</span><h2>" + title + " </h2><p>" + duration + "</p></a>");
+                var id_pel = field.id_pel;
+                var nama_pel = field.nama_pel;
+                var alamat_pel = field.alamat_pel;
+                var no_hp = field.no_hp;
+                
+                $("#listview").append("<a class='item' href='form.html?id_pel=" + id_pel + "&nama_pel=" + nama_pel +  "&alamat_pel=" + alamat_pel +"&no_hp=" + no_hp + "'><span class='item-note'>" + alamat_pel + "</span><h2>" + nama_pel + " </h2><p>" + id_pel + "</p></a>");
             });
         });
     });
