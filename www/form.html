@@ -6,23 +6,29 @@
     <script type="text/javascript" src="js/geturi.js"></script>
     <script type="text/javascript">
     $(document).ready(function() {
-        var id = decodeURI(getUrlVars()["id"]);
-        var title = decodeURI(getUrlVars()["title"]);
-        var duration = decodeURI(getUrlVars()["duration"]);
-        var price = decodeURI(getUrlVars()["price"]);
-        $("#id").val(id);
-        $("#title").val(title);
-        $("#duration").val(duration);
-        $("#price").val(price);
+        var id_pel= decodeURI(getUrlVars()["id_pel"]);
+        var nama_pel = decodeURI(getUrlVars()["nama_pel"]);
+        var alamat_pel = decodeURI(getUrlVars()["alamat_pel"]);
+        var no_hp = decodeURI(getUrlVars()["no_hp"]);
+
+        
+        $("#id_pel").val(id_pel);
+        $("#nama_pel").val(nama_pel);
+        $("#alamat_pel").val(alamat_pel);
+        $("#no_hp").val(no_hp);
+        
+        
         $("#update").click(function() {
-            var id = $("#id").val();
-            var title = $("#title").val();
-            var duration = $("#duration").val();
-            var price = $("#price").val();
-            var dataString = "id=" + id + "&title=" + title + "&duration=" + duration + "&price=" + price + "&update=";
+            var id_pel = $("#id_pel").val();
+            var nama_pel = $("#nama_pel").val();
+            var alamat_pel = $("#alamat_pel").val();
+            var no_hp = $("#no_hp").val();
+            
+            
+            var dataString = "id_pel=" + id_pel + "&nama_pel=" + nama_pel + "&alamat_pel=" + alamat_pel + "&no_hp=" + no_hp + "&update=";
             $.ajax({
                 type: "POST",
-                url: "https://kungfumas.000webhostapp.com/update.php",
+                url: "https://mayaaul.000webhostapp.com/cordova/cordova/www/update.php",
                 data: dataString,
                 crossDomain: true,
                 cache: false,
@@ -41,11 +47,11 @@
 
         });
         $("#delete").click(function() {
-            var id = $("#id").val();
-            var dataString = "id=" + id + "&delete=";
+            var id_baak = $("#id_pel").val();
+            var dataString = "id_pel=" + id_pel + "&delete=";
             $.ajax({
                 type: "GET",
-                url: "https://kungfumas.000webhostapp.com/delete.php",
+                url: "https://mayaaul.000webhostapp.com/cordova/cordova/www/delete.php",
                 data: dataString,
                 crossDomain: true,
                 cache: false,
@@ -76,19 +82,27 @@
     <br/>
     <br/>
     <div class="list">
-        <input type="hidden" id="id" value="" />
+       
         <div class="item">
-            <label>Title</label>
-            <input type="text" id="title" value="" />
+            <label>ID</label>
+            <input type="text" id="id_pel" value="" />
         </div>
         <div class="item">
-            <label>Duration</label>
-            <input type="text" id="duration" value="" />
+            <label>Nama</label>
+            <input type="text" id="nama_pel" value="" />
         </div>
+
         <div class="item">
-            <label>Price</label>
-            <input type="text" id="price" value="" />
+            <label>Alamat</label>
+            <input type="text" id="alamat_pel" value="" />
         </div>
+
+        <div class="item">
+            <label>no hp</label>
+            <input type="text" id="no_hp" value="" />
+        </div>
+        
+       
         <div class="item">
             <input type="button" id="update" class="button button-block" value="Update" />
             <input type="button" id="delete" class="button button-block" value="Delete" />
