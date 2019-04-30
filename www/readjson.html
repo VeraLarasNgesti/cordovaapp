@@ -9,12 +9,12 @@
         $.getJSON(url, function(result) {
             console.log(result);
             $.each(result, function(i, field) {
-                var id_pel = field.id_pel;
-                var nama_pel = field.nama_pel;
-                var alamat_pel = field.alamat_pel;
+                var id = field.id;
+                var nama = field.nama;
+                var alamat = field.alamat;
                 var no_hp = field.no_hp;
                 
-                $("#listview").append("<a class='item' href='form.html?id_pel=" + id_pel + "&nama_pel=" + nama_pel +  "&alamat_pel=" + alamat_pel +"&no_hp=" + no_hp + "'><span class='item-note'>" + alamat_pel + "</span><h2>" + nama_pel + " </h2><p>" + id_pel + "</p></a>");
+                $("#listview").append("<a class='item' href='form.html?id=" + id + "&nama=" + nama +  "&alamat=" + alamat +"&no_hp=" + no_hp + "'><h2>" + id + "</h2><h2>" + nama + " </h2><h2>" + alamat + "</h2><h2>" + no_hp + " </h2></a>");
             });
         });
     });
