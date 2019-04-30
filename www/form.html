@@ -6,26 +6,26 @@
     <script type="text/javascript" src="js/geturi.js"></script>
     <script type="text/javascript">
     $(document).ready(function() {
-        var id_pel= decodeURI(getUrlVars()["id_pel"]);
-        var nama_pel = decodeURI(getUrlVars()["nama_pel"]);
-        var alamat_pel = decodeURI(getUrlVars()["alamat_pel"]);
+        var id= decodeURI(getUrlVars()["id"]);
+        var nama = decodeURI(getUrlVars()["nama"]);
+        var alamat = decodeURI(getUrlVars()["alamat"]);
         var no_hp = decodeURI(getUrlVars()["no_hp"]);
 
         
-        $("#id_pel").val(id_pel);
-        $("#nama_pel").val(nama_pel);
-        $("#alamat_pel").val(alamat_pel);
+        $("#id").val(id);
+        $("#nama").val(nama);
+        $("#alamat").val(alamat);
         $("#no_hp").val(no_hp);
         
         
         $("#update").click(function() {
-            var id_pel = $("#id_pel").val();
-            var nama_pel = $("#nama_pel").val();
-            var alamat_pel = $("#alamat_pel").val();
+            var id = $("#id").val();
+            var nama = $("#nama").val();
+            var alamat = $("#alamat").val();
             var no_hp = $("#no_hp").val();
             
             
-            var dataString = "id_pel=" + id_pel + "&nama_pel=" + nama_pel + "&alamat_pel=" + alamat_pel + "&no_hp=" + no_hp + "&update=";
+            var dataString = "id=" + id + "&nama=" + nama + "&alamat=" + alamat + "&no_hp=" + no_hp + "&update=";
             $.ajax({
                 type: "POST",
                 url: "https://mayaaul.000webhostapp.com/cordova/cordova/www/update.php",
@@ -47,8 +47,8 @@
 
         });
         $("#delete").click(function() {
-            var id_baak = $("#id_pel").val();
-            var dataString = "id_pel=" + id_pel + "&delete=";
+            var id_baak = $("#id").val();
+            var dataString = "id=" + id + "&delete=";
             $.ajax({
                 type: "GET",
                 url: "https://mayaaul.000webhostapp.com/cordova/cordova/www/delete.php",
@@ -85,16 +85,16 @@
        
         <div class="item">
             <label>ID</label>
-            <input type="text" id="id_pel" value="" />
+            <input type="text" id="id" value="" />
         </div>
         <div class="item">
             <label>Nama</label>
-            <input type="text" id="nama_pel" value="" />
+            <input type="text" id="nama" value="" />
         </div>
 
         <div class="item">
             <label>Alamat</label>
-            <input type="text" id="alamat_pel" value="" />
+            <input type="text" id="alamat" value="" />
         </div>
 
         <div class="item">
